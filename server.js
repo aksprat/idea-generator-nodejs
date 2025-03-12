@@ -27,6 +27,7 @@ app.post('/generate', async (req, res) => {
         });
 
         const data = await response.json();
+        console.log('Agent Response:', JSON.stringify(data, null, 2)); // Debugging
         const agentResponse = data.response.content; // Adjust this based on your agent's response structure.
         res.json({ response: agentResponse });
     } catch (error) {
